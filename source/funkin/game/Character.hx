@@ -121,7 +121,7 @@ class Character extends FunkinSprite implements IBeatReceiver implements IOffset
 		scripts.call("postCreate");
 		switch (curCharacter)
 		{
-			case 'bf':
+			case 'bf-3d':
 				modelName = 'bf';
 				modelScale = 1;
 				animSpeed = ["default" => 1];
@@ -140,7 +140,7 @@ class Character extends FunkinSprite implements IBeatReceiver implements IOffset
 					"singLEFT" => "singUP"
 				];
 				atf = true;
-			case 'gf':
+			case 'gf-3d':
 				modelName = 'gf';
 				modelScale = 1;
 				animSpeed = ["default" => 1];
@@ -151,7 +151,7 @@ class Character extends FunkinSprite implements IBeatReceiver implements IOffset
 				xOffset = -100;
 				yOffset = -20;
 				atf = true;
-			case 'senpai':
+			case 'senpai-3d':
 				modelName = 'senpai';
 				modelScale = 1;
 				animSpeed = ["default" => 1];
@@ -171,7 +171,7 @@ class Character extends FunkinSprite implements IBeatReceiver implements IOffset
 					"idleEnd" => "default"
 				];
 				antialias = false;
-			case 'senpai-angry':
+			case 'senpai-angry-3d':
 				modelName = 'senpai-angry';
 				modelScale = 1;
 				animSpeed = ["default" => 1];
