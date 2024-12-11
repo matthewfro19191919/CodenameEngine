@@ -558,7 +558,9 @@ class Character extends FunkinSprite implements IBeatReceiver implements IOffset
 				return;
 			}
 			if (!noLoopList.contains('idle'))
+			{
 				return;
+			}
 			playAnim('idle', true);
 		}
 
