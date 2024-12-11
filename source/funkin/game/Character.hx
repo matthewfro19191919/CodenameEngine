@@ -542,9 +542,7 @@ class Character extends FunkinSprite implements IBeatReceiver implements IOffset
 					}
 			}
 		}
-
-		scripts.event("onCharacterNodeParsed", EventManager.get(CharacterNodeEvent).recycle(this, node, node.name));
-
+		
 		else if (holdTimer == 0)
 		{
 			if (model == null)
@@ -563,6 +561,8 @@ class Character extends FunkinSprite implements IBeatReceiver implements IOffset
 			}
 			playAnim('idle', true);
 		}
+
+		scripts.event("onCharacterNodeParsed", EventManager.get(CharacterNodeEvent).recycle(this, node, node.name));
 
 		for (attribute in xml.x.attributes())
 			if (!characterProperties.contains(attribute))
