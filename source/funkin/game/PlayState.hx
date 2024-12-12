@@ -29,7 +29,6 @@ import flixel.util.FlxTimer;
 import haxe.io.Path;
 import funkin.backend.system.Conductor;
 import funkin.game.cutscenes.*;
-
 import funkin.menus.*;
 import funkin.backend.scripting.events.*;
 
