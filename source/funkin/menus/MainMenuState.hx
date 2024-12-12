@@ -100,6 +100,11 @@ class MainMenuState extends MusicBeatState
 					persistentDraw = true;
 					openSubState(new funkin.editors.EditorPicker());
 				}
+				if (FlxG.keys.justPressed.THREE) {
+					persistentUpdate = false;
+					persistentDraw = true;
+					openSubState(new Overworld());
+				}
 				/*
 				if (FlxG.keys.justPressed.SEVEN)
 					FlxG.switchState(new funkin.desktop.DesktopMain());
