@@ -7,6 +7,7 @@ import funkin.backend.chart.EventsData;
 import funkin.backend.system.RotatingSpriteGroup;
 import funkin.editors.charter.Charter;
 import funkin.savedata.FunkinSave;
+import funkin.game.Character3D;
 import flixel.graphics.FlxGraphic;
 import funkin.backend.chart.Chart;
 import funkin.backend.chart.ChartData;
