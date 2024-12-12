@@ -4,6 +4,7 @@ import flixel.util.FlxDestroyUtil;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.graphics.frames.FlxAtlasFrames;
+import funkin.game.Character3D;
 
 using StringTools;
 
