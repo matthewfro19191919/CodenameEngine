@@ -524,22 +524,23 @@ class Character extends FunkinSprite implements IBeatReceiver implements IOffset
 					if (XMLImportedScriptInfo.shouldLoadBefore(node)) continue;
 					prepareInfos(node);
 				default:
-					if (holdTimer == 0)
+				if (holdTimer == 0)
+				{
+					if (model == null)
 					{
-						if (model == null)
-						{
-							trace("NO DANCE - NO MODEL");
-							return;
-						}
-						if (!model.fullyLoaded)
-						{
-							trace("NO DANCE - NO FULLY LOAD");
-							return;
-						}
-						if (!noLoopList.contains('idle'))
-							return;
-						playAnim('idle', true);
+						trace("NO DANCE - NO MODEL");
+						return;
 					}
+					if (!model.fullyLoaded)
+					{
+						trace("NO DANCE - NO FULLY LOAD");
+						return;
+					}
+					if (!noLoopList.contains('idle')) {
+						return;
+					}
+					playAnim('idle', true);
+				}
 			}
 		}
 		
