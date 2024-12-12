@@ -7,7 +7,7 @@ import funkin.backend.chart.EventsData;
 import funkin.backend.system.RotatingSpriteGroup;
 import funkin.editors.charter.Charter;
 import funkin.savedata.FunkinSave;
-import funkin.game.Character3D;
+import funkin.game.Character;
 import flixel.graphics.FlxGraphic;
 import funkin.backend.chart.Chart;
 import funkin.backend.chart.ChartData;
@@ -152,15 +152,15 @@ class PlayState extends MusicBeatState
 	/**
 	 * Dad character
 	 */
-	public var dad(get, set):Character3D;
+	public var dad(get, set):Character;
 	/**
 	 * Girlfriend character
 	 */
-	public var gf(get, set):Character3D;
+	public var gf(get, set):Character;
 	/**
 	 * Boyfriend character
 	 */
-	public var boyfriend(get, set):Character3D;
+	public var boyfriend(get, set):Character;
 
 	/**
 	 * Strum line position
@@ -1419,8 +1419,8 @@ class PlayState extends MusicBeatState
 	 * @param lossSFX SFX at the beginning of the game over (Mic drop). Default to `this.lossSFX` (`gameOverSFX`)
 	 * @param retrySFX SFX played whenever the player retries. Defaults to `retrySFX` (`gameOverEnd`)
 	 */
-	public function gameOver(?character:Character3D, ?deathCharID:String, ?gameOverSong:String, ?lossSFX:String, ?retrySFX:String) {
-		var charToUse:Character3D = character.getDefault(opponentMode ? dad : boyfriend);  // Imma still make it check null later just in case dad or bf are also null for some weird scripts  - Nex
+	public function gameOver(?character:Character, ?deathCharID:String, ?gameOverSong:String, ?lossSFX:String, ?retrySFX:String) {
+		var charToUse:Character = character.getDefault(opponentMode ? dad : boyfriend);  // Imma still make it check null later just in case dad or bf are also null for some weird scripts  - Nex
 		var event:GameOverEvent = scripts.event("onGameOver", EventManager.get(GameOverEvent).recycle(
 			charToUse == null ? 0 : charToUse.x,
 			charToUse == null ? 0 : charToUse.y,
@@ -1853,32 +1853,32 @@ class PlayState extends MusicBeatState
 	private inline function set_cpu(s:StrumLine):StrumLine
 		return cpuStrums = s;
 
-	private function get_boyfriend():Character3D {
+	private function get_boyfriend():Character {
 		if (strumLines != null && strumLines.members[1] != null)
 			return strumLines.members[1].characters[0];
 		return null;
 	}
-	private function set_boyfriend(bf:Character3D):Character3D {
+	private function set_boyfriend(bf:Character):Character {
 		if (strumLines != null && strumLines.members[1] != null)
 			strumLines.members[1].characters = [bf];
 		return bf;
 	}
-	private function get_dad():Character3D {
+	private function get_dad():Character {
 		if (strumLines != null && strumLines.members[0] != null)
 			return strumLines.members[0].characters[0];
 		return null;
 	}
-	private function set_dad(dad:Character3D):Character3D {
+	private function set_dad(dad:Character):Character {
 		if (strumLines != null && strumLines.members[0] != null)
 			strumLines.members[0].characters = [dad];
 		return dad;
 	}
-	private function get_gf():Character3D {
+	private function get_gf():Character {
 		if (strumLines != null && strumLines.members[2] != null)
 			return strumLines.members[2].characters[0];
 		return null;
 	}
-	private function set_gf(gf:Character3D):Character3D {
+	private function set_gf(gf:Character):Character {
 		if (strumLines != null && strumLines.members[2] != null)
 			strumLines.members[2].characters = [gf];
 		return gf;
