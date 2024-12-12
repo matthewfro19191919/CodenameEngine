@@ -148,7 +148,7 @@ jobs:
   build3:
     name: Mac OS Build
     permissions: write-all
-    runs-on: macos-14
+    runs-on: macos-13
     steps:
       - name: Pulling the new commit
         uses: actions/checkout@v2
